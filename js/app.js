@@ -94,15 +94,17 @@
     counter+=1;
     break;
  }
+   if (i==5){
+    alert('The answer was borj-khalifa , garden of roses , bedaazaid ,dubai');
+  }
 } 
+
 if (favPlaces!==places[0] || favPlaces!==places[1] || favPlaces!==places[2] || favPlaces!==places[3] ){
     console.log(sparkle[i]);
     alert(sparkle[i]);
  }
 
-  if (i==5){
-    alert('The answer was borj-khalifa , garden of roses , bedaazaid ,dubai');
-  }
+ 
 
  if (counter==7){
     alert('Gongradulation !' + UserInput);
