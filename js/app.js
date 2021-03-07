@@ -8,6 +8,7 @@ function answerQuestions_yes_or_no(Q_sting, userAnswer, trueAnswer) {
         alert("NO , i wanna answer's by yes/no , y/n \n OKAY!!")
         userAnswer = prompt(Q_sting).toLowerCase()
              console.log(userAnswer)
+             console.log(userAnswer)
     }
     if (userAnswer === trueAnswer) {
         score++;
@@ -22,21 +23,20 @@ function Question_Trial(trial, Question, userAnswer, trueanswer, numberofQuestio
     let score = 0;
     if (numberofQuestion === 6) console.log("answer   " + userAnswer + "    " + trueanswer)
     while (trial) {
-         
         if (numberofQuestion == 6)
             if (userAnswer == trueanswer) {
                 alert('yah you got it ' + trueanswer);
                 return ++score;
                 break;
             }
-            
+
         if (numberofQuestion == 7)
             if (userAnswer == trueanswer[0] || userAnswer === trueanswer[1] || userAnswer === trueanswer[2] || userAnswer === trueanswer[3]) {
                 alert('yah you got it  ' + userAnswer);
                 return ++score;
                 break;
             }
-                
+
         if (score === 0 && trial != 0) {
             alert("try again u have left  " + --trial)
             if (numberofQuestion == 7) alert("it places in United Arab Emarat ")
@@ -90,6 +90,8 @@ counter += answerQuestions_yes_or_no(Question05, confermGuess, 'y');
 console.log("counter5= ", counter)
 
 
+
+
 let salary = 550;
 let Question06 = "try to guess the salary of the wedsite creater ! ** Hent: it is between 300 and 600 "
 let guessSalary = prompt(Question06);
@@ -97,15 +99,14 @@ counter += Question_Trial(4, Question06, guessSalary, salary, 6);
 console.log("counter6= ", counter)
 
 
+
+
+
 let places = ['borj-khalifa', 'garden of roses', 'bedaazaid', 'dubai'];
 let Question07 = "Try to guess my favourate places in UAE ! "
 let sparkle = prompt(Question07)
-
 counter += Question_Trial(6, Question07, sparkle, places, 7);
 console.log("the final score    ", counter)
-
-
-
 
 if (counter == 7) {
     alert('Gongradulation !' + UserInput);
