@@ -1,7 +1,7 @@
 #par{
     color: rgb(99, 7, 53);
     font-style: italic;
-    font-size: large;
+    font-size: 50px;
     background-color: rgb(221, 113, 113);
     
 }
@@ -9,28 +9,38 @@
 .pa1{
     color: rgb(223, 65, 96);
     font-style: italic;
-    font-size: large;
-    background-color: burlywood;
-    
+    font-size: 40px;
 }
 
 .pp2{
     color: rgb(221, 45, 168);
     font-style: italic;
-    font-size: large;
-    background-color: rgb(31, 7, 19);
-    
+    font-size: 30px;
 }
 
 .pag3{
 color: rgb(223, 13, 76);
 font-style: italic;
-font-size: large;
-background-color: indigo;
-
+font-size: 30px;
+}
+p{
+    font-size: 30px;
 }
 
 body{
     background-color: black;
 }
+nav {
+    color:darkred;
+    font-size: medium;
+    font-style: italic;
+    background-color: dimgray;
+    padding: 20px;
+    display:inline-block;
+    margin:50px;
+}
 
+li{
+    color:rgb(124, 5, 65);
+    font-style: italic;
+}

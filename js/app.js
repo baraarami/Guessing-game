@@ -1,131 +1,116 @@
 'use strict';
- let counter=0;
-  let UserInput =prompt("Can you tell me your name , please !");
-  while (!UserInput){
-  UserInput=prompt('please provide a name !');
-  }
-  alert("welcome to our site " + UserInput);
-  console.log("Can you tell me your name , please !" + UserInput);
-  console.log("welcome to our site " + UserInput);
+let counter = 0;
 
-  alert("I will ask you a few quastions and your answers must be just yes or no !");
- 
-  let nameGuss=prompt("Can you guess the creater of this websit !? ");
-  if (nameGuss=== "yes" || nameGuss=== "Yes" || nameGuss=== "YES" || nameGuss=== "y" || nameGuss=== "Y") {
-  alert("Ok , will see !" +  UserInput); 
-  cosnsole.log('your score is :' + counter);
-  console.log("Can you guess the creater of this websit !? "+ nameGuss);
-  counter++;
-  } else {
-  console.log("Can you guess the creater of this websit !? " + "Ok , thank you !" + nameGuss);
-  alert("Ok , thank you !" + UserInput); 
-  } 
-  
-  let ageGuss=prompt("Can you gess the age of the creater !?");
-  if (ageGuss=== "yes" || ageGuss=== "Yes" || ageGuss=== "YES" || ageGuss=== "y" || ageGuss=== "Y") {
-  alert("Ok , will see !" + UserInput);
-  cosnsole.log('your score is :' + counter);
-  console.log("Can you gess the age of the creater !?" + ageGuss);
-  counter++;  
-  } else {
-  alert("Ok , thank you !");
-  console.log("Can you gess the age of the creater !?" +"Ok , thank you !"+ ageGuss ); 
-  } 
-  
+function answerQuestions_yes_or_no(Q_sting, userAnswer, trueAnswer) {
+    let score = 0;
+    while (!(userAnswer === 'yes') && !(userAnswer === 'no') && !(userAnswer === 'y') && !(userAnswer === 'n')) {
 
-  let majorGuess=prompt("Did you think the creater studed somthing related to computer and IT in general !?");
-  if (majorGuess=== "yes" || majorGuess=== "Yes" || majorGuess=== "YES" || majorGuess=== "y" || majorGuess=== "Y") {
-  alert("OF course , unless how this webpage is created ! dah !");
-  cosnsole.log('your score is :' + counter);
-  console.log("Did you think the creater studed somthing related to computer and IT in general !?"+ majorGuess);
-  counter++;
-  } else {
-  alert("Are you shoure about that honey !"); 
-  console.log("Did you think the creater studed somthing related to computer and IT in general !?"+ "Are you shoure about that honey !" + majorGuess);
-  }
-  
-
-  let statusGuess=prompt("Did you think the creater love shawerma ?!");
-  if (statusGuess=== "yes" || statusGuess=== "Yes" || statusGuess=== "YES" || statusGuess=== "y" || statusGuess=== "Y") {
-  alert("Who didn't love this delicious meal !");
-  cosnsole.log('your score is :' + counter);
-  console.log("Did you think the creater lovw shawerma ?!" + statusGuess);
-  counter++; 
-  } else {
-  alert("Are you shoure about that couse who didn't !"); 
-  console.log("Did you think the creater lovw shawerma ?!"+ "Are you shoure about that couse who didn't !" + statusGuess);
-  } 
-  
-
-  let confermGuess=prompt("Would you advise to continue what the creator doing?! ");
-  if (confermGuess=== "yes" || confermGuess=== "Yes" || confermGuess=== "YES" || confermGuess=== "y" || confermGuess=== "Y") {
-  alert(" I appreciate your advice i will take it into consideration , thank you !");
-  cosnsole.log('your score is :' + counter);
-  console.log("Would you advise to continue what the creator  doing?! " + confermGuess);
-  counter++;
-  } else {
-  alert(" Ok , i appreciate your advise !"); 
-  console.log("Would you advise to continue what the creator doing?! "+ "Are you shoure about that honey !"+" Ok , i appreciate your advise !" + confermGuess);
-   }
-  
-  
-  let salary=550;
-  for (let i=4 ;i>=1 ;i--){
-  let guessSalary=prompt('try to guess the salary of the wedsite creater ! ** Hent: it is between 300 and 600 ');
-  if (guessSalary== salary){
-  alert('yah you got it ' +UserInput);      
-  break;
-  }else if (guessSalary< 550){
-  alert('no not that much its too low ');
-  }else {
-  alert('will , i hope and i am working to reach this salary and above actually !');
+        alert("NO , i wanna answer's by yes/no , y/n \n OKAY!!")
+        userAnswer = prompt(Q_sting).toLowerCase()
+             console.log(userAnswer)
     }
-  if (i==1)
-  alert('550 was my salary actully ! ');
-  }
+    if (userAnswer === trueAnswer) {
+        score++;
+        console.log("function answer  " + userAnswer, score)
+        return score;
+    } else return score;
+
+}
+
+
+function Question_Trial(trial, Question, userAnswer, trueanswer, numberofQuestion) {
+    let score = 0;
+    if (numberofQuestion === 6) console.log("answer   " + userAnswer + "    " + trueanswer)
+    while (trial) {
+         
+        if (numberofQuestion == 6)
+            if (userAnswer == trueanswer) {
+                alert('yah you got it ' + trueanswer);
+                return ++score;
+                break;
+            }
+            
+        if (numberofQuestion == 7)
+            if (userAnswer == trueanswer[0] || userAnswer === trueanswer[1] || userAnswer === trueanswer[2] || userAnswer === trueanswer[3]) {
+                alert('yah you got it  ' + userAnswer);
+                return ++score;
+                break;
+            }
+                
+        if (score === 0 && trial != 0) {
+            alert("try again u have left  " + --trial)
+            if (numberofQuestion == 7) alert("it places in United Arab Emarat ")
+            userAnswer = prompt(Question)
+
+        }
+        if (trial === 1) {
+            alert("GOOD LUCK!!! \n your don't have any Trial left")
+            alert("the answer  : " + trueanswer)
+            return score;
+        }
+    }
+}
+
+
+let UserInput = prompt("Can you tell me your name , please !");
+while (!UserInput) {
+    UserInput = prompt('please provide a name !');
+}
+alert("welcome to our site " + UserInput);
+alert("I will ask you a few quastions and your answers must be just yes or no !");
 
  
- let places =['borj-khalifa' , 'garden of roses' ,'bedaazaid' ,'dubai' ];
- let sparkle=['it places in United Arab Emarat '];
- for (let i=0 ; i<5;i++){
-   let favPlaces=prompt("Try to guess my favourate places in UAE !");
-    if (favPlaces==places[0] || favPlaces==places[1] || favPlaces==places[2] || favPlaces==places[3] ){
-   alert('yaaaaaas you guess my favorate place ');
-    counter+=1;
-    break;
- }
-} 
-if (favPlaces!==places[0] || favPlaces!==places[1] || favPlaces!==places[2] || favPlaces!==places[3] ){
-    console.log(sparkle[i]);
-    alert(sparkle[i]);
- }
+let Question01 = "Can you guess the creater of this websit !? "
+let nameGuess = prompt(Question01).toLowerCase();
+counter += answerQuestions_yes_or_no(Question01, nameGuess, 'y');
+console.log("counter1 ", counter)
 
-  if (i==5){
-    alert('The answer was borj-khalifa , garden of roses , bedaazaid ,dubai');
-  }
 
- if (counter==7){
+let Question02 = "Can you gess the age of the creater !?"
+let ageGuess = prompt(Question02).toLowerCase();
+counter += answerQuestions_yes_or_no(Question02, ageGuess, 'y');
+console.log("counter2 ", counter)
+
+
+let Question03 = "Did you think the creater studed somthing related to computer and IT in general !?"
+let majorGuess = prompt(Question03).toLowerCase();
+counter += answerQuestions_yes_or_no(Question03, majorGuess, 'y');
+console.log("counter3 ", counter)
+
+
+let Question04 = "Did you think the creater love shawerma ?!"
+let statusGuess = prompt(Question04).toLowerCase();
+counter += answerQuestions_yes_or_no(Question04, statusGuess, 'y');
+console.log("counter4 ", counter)
+
+
+let Question05 = "Would you advise to continue what the creator doing?! "
+let confermGuess = prompt(Question05).toLowerCase();
+counter += answerQuestions_yes_or_no(Question05, confermGuess, 'y');
+console.log("counter5= ", counter)
+
+
+let salary = 550;
+let Question06 = "try to guess the salary of the wedsite creater ! ** Hent: it is between 300 and 600 "
+let guessSalary = prompt(Question06);
+counter += Question_Trial(4, Question06, guessSalary, salary, 6);
+console.log("counter6= ", counter)
+
+
+let places = ['borj-khalifa', 'garden of roses', 'bedaazaid', 'dubai'];
+let Question07 = "Try to guess my favourate places in UAE ! "
+let sparkle = prompt(Question07)
+
+counter += Question_Trial(6, Question07, sparkle, places, 7);
+console.log("the final score    ", counter)
+
+
+
+
+if (counter == 7) {
     alert('Gongradulation !' + UserInput);
- }
-  else{
+} else {
     alert('I am sorry for that but you did not win !');
-    }
+}
 
- alert(UserInput+'your score is :' + counter +'out of 7');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+alert(UserInput + ' your score is : ' + counter + ' out of 7');
